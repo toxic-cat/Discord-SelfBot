@@ -5,6 +5,7 @@ import os
 import platform
 from colorama import Fore
 import random
+import itertools
 
 y = Fore.LIGHTYELLOW_EX
 b = Fore.LIGHTBLUE_EX
@@ -16,6 +17,8 @@ with open("config.json", "r") as file:
     config = json.load(file)
     token = config.get("token")
     prefix = config.get("prefix")
+    if config["autoreply"]["messages"]:
+        message_generator = itertools.cycle(config["autoreply"]["messages"])
 
 bot = commands.Bot(command_prefix=prefix, self_bot=True, help_command=None)
 
