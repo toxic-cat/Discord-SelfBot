@@ -1,0 +1,24 @@
+{
+    "token": "YOUR_TOKEN_HERE",
+    "prefix": ".",
+    "remote_users": [],
+    "autobeefer": {
+        "enabled": false,
+        "users": [],
+        "messages": [
+            "beefin"
+        ]
+    },
+    "copycat": {
+        "users": []
+    },
+    "afk": {
+        "enabled": false,
+        "message": "I am currently AFK. I will respond as soon as possible!"
+    },
+    "autoreply": {
+        "users": [],
+        "channels": [],
+        "messages": []
+    }
+}

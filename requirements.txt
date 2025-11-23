@@ -4,3 +4,5 @@ discord.py-self
 gtts
 qrcode
 pyfiglet
+aiohttp
+Pillow
